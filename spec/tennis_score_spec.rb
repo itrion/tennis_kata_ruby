@@ -26,6 +26,12 @@ RSpec.describe 'Tennis Score' do
 			expect(game.score).to eq '40 - love'
 		end
 
+		it 'player_1 wins when he makes four points in a row' do
+			add_to player: 'player_1', points: 4
+
+			expect(game.score).to eq 'player 1 wins'
+		end
+
 		def add_to config
 			points = config[:points]
 			player = config[:player]

@@ -3,7 +3,10 @@ class TennisGame
 		@score = {player_1: 0, player_2: 0}
   end
 
-	def score
+	def score 
+		if @score[:player_1] == 4
+			return 'player 1 wins'
+		end
 		format_points_of(:player_1) + ' - ' + format_points_of(:player_2)
 	end
 	
